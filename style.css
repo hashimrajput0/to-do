@@ -70,8 +70,8 @@ p {
 }
 @media (max-width: 1000px) {
   .container {
-    padding-left: 25px;
-    padding-right: 25px;
+    min-width: 80%;
   }
+
 
 }
