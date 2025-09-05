@@ -1,75 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap"
-        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notes Application</title>
+    <title>To-Do</title>
 </head>
-
 <body>
-    <main>
-        <div class="heading">
-            <h1>My Notes</h1>
+    <div class="main-container">
+        <h1 id="heading" >
+            To-Do App
+            <p id="msg" ></p>
+        </h1>
+        <div class="input-container">
+            <input class="user-input" placeholder="Enter your Tasks" type="text">
+            <button class="add-btn" >Add Task</button>
         </div>
-    </main>
-    <div class="top-buttons">
-        <button class="new-notes">Add New</button>
-        <button class="mode">🌙</button>
+        <ul>
+
+
+        </ul>
     </div>
-    <div class="main-content">
-        <div class="notes-box">
-            <div class="close">
-                <button class="cross"> <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
-                        width="20px" fill="#FFFFFF">
-                        <path
-                            d="m291-240-51-51 189-189-189-189 51-51 189 189 189-189 51 51-189 189 189 189-51 51-189-189-189 189Z" />
-                    </svg>
-                    </svg></button>
-            </div>
-            <div class="title">
-                Name
-
-            </div>
-            <div class="massege">
-                Notes
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- dialog work start here -->
-
-
-    <dialog class="add-content-dialog">
-        <div class="close-dialog">
-            <button class="cross-dialog"> <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
-                    width="20px" fill="#FFFFFF">
-                    <path
-                        d="m291-240-51-51 189-189-189-189 51-51 189 189 189-189 51 51-189 189 189 189-51 51-189-189-189 189Z" />
-                </svg>
-                </svg></button>
-        </div>
-        <div class="add-content">
-
-
-            <div class="title-dialog">
-                <input class="title-input" placeholder="Title" type="Title">
-
-            </div>
-            <div class="notes-input-box">
-                <textarea name="notes-input" placeholder="Enter Notes......" class="notes-input"></textarea>
-            </div>
-            <button class="save-button" >Save</button>
-        </div>
-
-
-    </dialog>
-    <script src="main.js"></script>
+    <script src="app.js" ></script>
 </body>
-
 </html>
