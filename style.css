@@ -56,6 +56,7 @@ li {
   align-items: center;
 }
 button {
+  margin-left: 10px;
   background-color: #e74c3c; /* red color */
   color: white; /* text color */
   border: none; /* no border */
@@ -70,4 +71,9 @@ button {
 p {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
+}
+li input {
+  margin-left: auto;
+  height: 2rem;
+  width: 2rem;
 }
