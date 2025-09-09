@@ -6,8 +6,8 @@ const list = document.querySelector("ul");
 
 
 window.addEventListener("DOMContentLoaded", () => {
-    let notes = JSON.parse(localStorage.getItem("notes")) || [];
-    createnotes(notes);
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    createtasks(tasks);
 });
 
 addBtn.addEventListener("click", () => {
@@ -22,48 +22,48 @@ addBtn.addEventListener("click", () => {
 });
 
 function saveinput(userInput) {
-    let notes = JSON.parse(localStorage.getItem("notes")) || [];
-    notes.push({ text: userInput, done: false });
-    localStorage.setItem("notes", JSON.stringify(notes));
-    createnotes(notes);
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    tasks.push({ text: userInput, done: false });
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    createtasks(tasks);
 }
 
-function createnotes(notes) {
+function createtasks(tasks) {
     list.innerHTML = "";
-    notes.forEach((note, index) => {
+    tasks.forEach((task, index) => {
         let box = document.createElement("li");
         let p = document.createElement("p");
         let del_btn = document.createElement("button");
         let tickBox = document.createElement("input");
         tickBox.type = "checkbox";
 
-        tickBox.checked = note.done;
-        if (note.done) {
+        tickBox.checked = task.done;
+        if (task.done) {
              p.style.textDecoration = "line-through";
              p.style.textDecorationColor = "red"
              p.style.textDecorationThickness = "2px"
         }
 
         del_btn.innerText = "Delete";
-        p.innerText = note.text;
+        p.innerText = task.text;
 
         tickBox.addEventListener("change", () => {
-            notes[index].done = tickBox.checked;
-            localStorage.setItem("notes", JSON.stringify(notes)); // ✅ save
-            createnotes(notes);
+            tasks[index].done = tickBox.checked;
+            localStorage.setItem("tasks", JSON.stringify(tasks)); // ✅ save
+            createtasks(tasks);
         });
 
 
-        list.appendChild(box);
+        list.prepend(box);
         box.appendChild(p);
         box.appendChild(tickBox);
         box.appendChild(del_btn);
 
 
         del_btn.addEventListener("click", () => {
-            notes.splice(index, 1);
-            localStorage.setItem("notes", JSON.stringify(notes));
-            createnotes(notes);
+            tasks.splice(index, 1);
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+            createtasks(tasks);
         });
 
     });
